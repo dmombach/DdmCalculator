@@ -1,5 +1,8 @@
 #pragma once
 #include <cmath>
+#include <string>
+#include <stack>
+#include <sstream>
 
 class Calculator
 {
@@ -10,4 +13,5 @@ public:
     double divide(double a, double b);
     int modulus(int a, int b);
     double power(double base, double exponent);
+    double evaluateRPN(const std::string& expression);
 };
