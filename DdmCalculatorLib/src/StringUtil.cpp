@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "StringUtil.h"
 #include <algorithm>
 #include <cctype>

@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36705.20 d17.14
+VisualStudioVersion = 17.14.36705.20
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DdmCalculator", "DdmCalculator\DdmCalculator.vcxproj", "{93454696-0F80-4DA3-8E49-101BC7D270D1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DdmCalculatorTests", "DdmCalculatorTests\DdmCalculatorTests.vcxproj", "{4129B583-7C61-44BB-AF03-F4F564B49146}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DdmCalculatorLib", "DdmCalculatorLib\DdmCalculatorLib.vcxproj", "{E888D2A8-A38A-438C-A609-CC464E711F0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,22 @@ Global
 		{93454696-0F80-4DA3-8E49-101BC7D270D1}.Release|x64.Build.0 = Release|x64
 		{93454696-0F80-4DA3-8E49-101BC7D270D1}.Release|x86.ActiveCfg = Release|Win32
 		{93454696-0F80-4DA3-8E49-101BC7D270D1}.Release|x86.Build.0 = Release|Win32
+		{4129B583-7C61-44BB-AF03-F4F564B49146}.Debug|x64.ActiveCfg = Debug|x64
+		{4129B583-7C61-44BB-AF03-F4F564B49146}.Debug|x64.Build.0 = Debug|x64
+		{4129B583-7C61-44BB-AF03-F4F564B49146}.Debug|x86.ActiveCfg = Debug|Win32
+		{4129B583-7C61-44BB-AF03-F4F564B49146}.Debug|x86.Build.0 = Debug|Win32
+		{4129B583-7C61-44BB-AF03-F4F564B49146}.Release|x64.ActiveCfg = Release|x64
+		{4129B583-7C61-44BB-AF03-F4F564B49146}.Release|x64.Build.0 = Release|x64
+		{4129B583-7C61-44BB-AF03-F4F564B49146}.Release|x86.ActiveCfg = Release|Win32
+		{4129B583-7C61-44BB-AF03-F4F564B49146}.Release|x86.Build.0 = Release|Win32
+		{E888D2A8-A38A-438C-A609-CC464E711F0D}.Debug|x64.ActiveCfg = Debug|x64
+		{E888D2A8-A38A-438C-A609-CC464E711F0D}.Debug|x64.Build.0 = Debug|x64
+		{E888D2A8-A38A-438C-A609-CC464E711F0D}.Debug|x86.ActiveCfg = Debug|Win32
+		{E888D2A8-A38A-438C-A609-CC464E711F0D}.Debug|x86.Build.0 = Debug|Win32
+		{E888D2A8-A38A-438C-A609-CC464E711F0D}.Release|x64.ActiveCfg = Release|x64
+		{E888D2A8-A38A-438C-A609-CC464E711F0D}.Release|x64.Build.0 = Release|x64
+		{E888D2A8-A38A-438C-A609-CC464E711F0D}.Release|x86.ActiveCfg = Release|Win32
+		{E888D2A8-A38A-438C-A609-CC464E711F0D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

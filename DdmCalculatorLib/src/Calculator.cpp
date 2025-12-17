@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Calculator.h"
 #include <iostream>
 #include <stdexcept>
