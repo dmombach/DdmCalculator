@@ -2,6 +2,8 @@
 #include "Calculator.h"
 #include <gtest/gtest.h>
 
+#pragma message("Including gtest header from: " __FILE__)
+
 // Define a struct for test parameters
 struct CalcTestParam
 {
