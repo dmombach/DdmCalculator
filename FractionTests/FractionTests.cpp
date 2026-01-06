@@ -7,3 +7,17 @@ TEST(FractionTests, DefaultConstructorCreatesZero)
     EXPECT_EQ(f.numerator(), 0);
     EXPECT_EQ(f.denominator(), 1);
 }
+
+TEST(FractionTests, ConstructorReducesFraction)
+{
+    Fraction f(6, 8);
+    EXPECT_EQ(f.numerator(), 3);
+    EXPECT_EQ(f.denominator(), 4);
+}
+
+TEST(FractionTests, NegativeDenominatorMovesSignToNumerator)
+{
+    Fraction f(1, -2);
+    EXPECT_EQ(f.numerator(), -1);
+    EXPECT_EQ(f.denominator(), 2);
+}
