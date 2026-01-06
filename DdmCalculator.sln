@@ -6,15 +6,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DdmCalculator", "DdmCalculator\DdmCalculator.vcxproj", "{93454696-0F80-4DA3-8E49-101BC7D270D1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DdmCalculatorTests", "DdmCalculatorTests\DdmCalculatorTests.vcxproj", "{4129B583-7C61-44BB-AF03-F4F564B49146}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5003237C-D724-4652-A63E-5AA3EDF5CA65} = {5003237C-D724-4652-A63E-5AA3EDF5CA65}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DdmCalculatorLib", "DdmCalculatorLib\DdmCalculatorLib.vcxproj", "{E888D2A8-A38A-438C-A609-CC464E711F0D}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gtest", "externals\googletest_build\gtest\gtest.vcxproj", "{D562E44B-8E23-403C-AC3F-0F03F3E45437}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gtest_main", "externals\googletest_build\gtest_main\gtest_main.vcxproj", "{5003237C-D724-4652-A63E-5AA3EDF5CA65}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FractionLib", "FractionLib\FractionLib.vcxproj", "{3627AAF1-A6E0-4E14-89A0-F709CEF93B8F}"
 EndProject
@@ -52,22 +45,6 @@ Global
 		{E888D2A8-A38A-438C-A609-CC464E711F0D}.Release|x64.Build.0 = Release|x64
 		{E888D2A8-A38A-438C-A609-CC464E711F0D}.Release|x86.ActiveCfg = Release|Win32
 		{E888D2A8-A38A-438C-A609-CC464E711F0D}.Release|x86.Build.0 = Release|Win32
-		{D562E44B-8E23-403C-AC3F-0F03F3E45437}.Debug|x64.ActiveCfg = Debug|x64
-		{D562E44B-8E23-403C-AC3F-0F03F3E45437}.Debug|x64.Build.0 = Debug|x64
-		{D562E44B-8E23-403C-AC3F-0F03F3E45437}.Debug|x86.ActiveCfg = Debug|Win32
-		{D562E44B-8E23-403C-AC3F-0F03F3E45437}.Debug|x86.Build.0 = Debug|Win32
-		{D562E44B-8E23-403C-AC3F-0F03F3E45437}.Release|x64.ActiveCfg = Release|x64
-		{D562E44B-8E23-403C-AC3F-0F03F3E45437}.Release|x64.Build.0 = Release|x64
-		{D562E44B-8E23-403C-AC3F-0F03F3E45437}.Release|x86.ActiveCfg = Release|Win32
-		{D562E44B-8E23-403C-AC3F-0F03F3E45437}.Release|x86.Build.0 = Release|Win32
-		{5003237C-D724-4652-A63E-5AA3EDF5CA65}.Debug|x64.ActiveCfg = Debug|x64
-		{5003237C-D724-4652-A63E-5AA3EDF5CA65}.Debug|x64.Build.0 = Debug|x64
-		{5003237C-D724-4652-A63E-5AA3EDF5CA65}.Debug|x86.ActiveCfg = Debug|Win32
-		{5003237C-D724-4652-A63E-5AA3EDF5CA65}.Debug|x86.Build.0 = Debug|Win32
-		{5003237C-D724-4652-A63E-5AA3EDF5CA65}.Release|x64.ActiveCfg = Release|x64
-		{5003237C-D724-4652-A63E-5AA3EDF5CA65}.Release|x64.Build.0 = Release|x64
-		{5003237C-D724-4652-A63E-5AA3EDF5CA65}.Release|x86.ActiveCfg = Release|Win32
-		{5003237C-D724-4652-A63E-5AA3EDF5CA65}.Release|x86.Build.0 = Release|Win32
 		{3627AAF1-A6E0-4E14-89A0-F709CEF93B8F}.Debug|x64.ActiveCfg = Debug|x64
 		{3627AAF1-A6E0-4E14-89A0-F709CEF93B8F}.Debug|x64.Build.0 = Debug|x64
 		{3627AAF1-A6E0-4E14-89A0-F709CEF93B8F}.Debug|x86.ActiveCfg = Debug|Win32

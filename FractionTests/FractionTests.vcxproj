@@ -76,13 +76,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)gtest\include;$(SolutionDir)gtest_main\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);FractionLib.lib;gtest.lib;gtest_main.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)gtest\$(Configuration)\;$(SolutionDir)gtest_main\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -93,13 +93,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)gtest\include;$(SolutionDir)gtest_main\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);FractionLib.lib;gtest.lib;gtest_main.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)gtest\$(Configuration)\;$(SolutionDir)gtest_main\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -108,13 +108,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)gtest\include;$(SolutionDir)gtest_main\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);FractionLib.lib;gtest.lib;gtest_main.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)gtest\$(Configuration)\;$(SolutionDir)gtest_main\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -125,25 +125,19 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)gtest\include;$(SolutionDir)gtest_main\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);FractionLib.lib;gtest.lib;gtest_main.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)gtest\$(Configuration)\;$(SolutionDir)gtest_main\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FractionTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\externals\googletest_build\gtest\gtest.vcxproj">
-      <Project>{d562e44b-8e23-403c-ac3f-0f03f3e45437}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\externals\googletest_build\gtest_main\gtest_main.vcxproj">
-      <Project>{5003237c-d724-4652-a63e-5aa3edf5ca65}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\FractionLib\FractionLib.vcxproj">
       <Project>{3627aaf1-a6e0-4e14-89a0-f709cef93b8f}</Project>
     </ProjectReference>
