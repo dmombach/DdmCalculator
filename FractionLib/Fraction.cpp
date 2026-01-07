@@ -48,3 +48,4 @@ void Fraction::reduce()
         m_denominator /= divisor;
     }
 }
+
