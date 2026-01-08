@@ -4,6 +4,7 @@
 TEST(FractionTests, DefaultConstructorCreatesZero)
 {
     Fraction f;
+
     EXPECT_EQ(f.numerator(), 0);
     EXPECT_EQ(f.denominator(), 1);
 }
@@ -11,6 +12,7 @@ TEST(FractionTests, DefaultConstructorCreatesZero)
 TEST(FractionTests, ConstructorReducesFraction)
 {
     Fraction f(6, 8);
+
     EXPECT_EQ(f.numerator(), 3);
     EXPECT_EQ(f.denominator(), 4);
 }
@@ -18,6 +20,7 @@ TEST(FractionTests, ConstructorReducesFraction)
 TEST(FractionTests, NegativeDenominatorMovesSignToNumerator)
 {
     Fraction f(1, -2);
+
     EXPECT_EQ(f.numerator(), -1);
     EXPECT_EQ(f.denominator(), 2);
 }
@@ -25,6 +28,7 @@ TEST(FractionTests, NegativeDenominatorMovesSignToNumerator)
 TEST(FractionTests, ZeroNumeratorAlwaysReducesToZeroOverOne)
 {
     Fraction f(0, 5);
+
     EXPECT_EQ(f.numerator(), 0);
     EXPECT_EQ(f.denominator(), 1);
 }
@@ -32,6 +36,7 @@ TEST(FractionTests, ZeroNumeratorAlwaysReducesToZeroOverOne)
 TEST(FractionTests, ReducesNegativeFractionsCorrectly)
 {
     Fraction f(-6, 8);
+
     EXPECT_EQ(f.numerator(), -3);
     EXPECT_EQ(f.denominator(), 4);
 }
@@ -39,6 +44,7 @@ TEST(FractionTests, ReducesNegativeFractionsCorrectly)
 TEST(FractionTests, DoubleNegativeBecomesPositive)
 {
     Fraction f(-6, -8);
+    
     EXPECT_EQ(f.numerator(), 3);
     EXPECT_EQ(f.denominator(), 4);
 }
@@ -47,6 +53,7 @@ TEST(FractionTests, EqualityOperatorWorksForEquivalentFractions)
 {
     Fraction a(1, 2);
     Fraction b(2, 4);
+    
     EXPECT_TRUE(a == b);
 }
 
@@ -54,6 +61,7 @@ TEST(FractionTests, EqualityOperatorWorksForDifferentFractions)
 {
     Fraction a(1, 2);
     Fraction b(3, 4);
+    
     EXPECT_FALSE(a == b);
 }
 
@@ -61,6 +69,87 @@ TEST(FractionTests, InequalityOperatorWorks)
 {
     Fraction a(1, 2);
     Fraction b(3, 4);
+    
     EXPECT_TRUE(a != b);
     EXPECT_FALSE(a != Fraction(2, 4)); // equal fractions
+}
+
+TEST(FractionTests, LessThanOperatorWorks)
+{
+    Fraction a(1, 2);
+    Fraction b(3, 4);
+    
+    EXPECT_TRUE(a < b);
+    EXPECT_FALSE(b < a);
+    EXPECT_FALSE(a < Fraction(2, 4)); // equal fractions
+}
+
+TEST(FractionTests, LessThanOrEqualOperatorWorks)
+{
+    Fraction a(1, 2);
+    Fraction b(3, 4);
+
+    EXPECT_TRUE(a <= b);
+    EXPECT_TRUE(a <= Fraction(2, 4)); // equal
+    EXPECT_FALSE(b <= a);
+}
+
+TEST(FractionTests, GreaterThanOperatorWorks)
+{
+    Fraction a(1, 2);
+    Fraction b(3, 4);
+
+    EXPECT_TRUE(b > a);
+    EXPECT_FALSE(a > b);
+    EXPECT_FALSE(a > Fraction(2, 4)); // equal
+}
+
+TEST(FractionTests, GreaterThanOrEqualOperatorWorks)
+{
+    Fraction a(1, 2);
+    Fraction b(3, 4);
+
+    EXPECT_TRUE(b >= a);
+    EXPECT_TRUE(a >= Fraction(2, 4)); // equal
+    EXPECT_FALSE(a >= b);
+}
+
+TEST(FractionTests, AdditionOperatorWorks)
+{
+    Fraction a(1, 2);
+    Fraction b(1, 3);
+
+    Fraction result = a + b;
+
+    EXPECT_EQ(result, Fraction(5, 6));
+}
+
+TEST(FractionTests, SubtractionOperatorWorks)
+{
+    Fraction a(1, 2);
+    Fraction b(1, 3);
+
+    Fraction result = a - b;
+
+    EXPECT_EQ(result, Fraction(1, 6));
+}
+
+TEST(FractionTests, MultiplicationOperatorWorks)
+{
+    Fraction a(2, 3);
+    Fraction b(3, 4);
+
+    Fraction result = a * b;
+
+    EXPECT_EQ(result, Fraction(1, 2)); // 6/12 reduces to 1/2
+}
+
+TEST(FractionTests, DivisionOperatorWorks)
+{
+    Fraction a(2, 3);
+    Fraction b(3, 4);
+
+    Fraction result = a / b;
+
+    EXPECT_EQ(result, Fraction(8, 9)); // (2/3) / (3/4) = (2/3)*(4/3) = 8/9
 }
