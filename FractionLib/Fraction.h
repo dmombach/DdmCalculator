@@ -101,6 +101,44 @@ public:
                         static_cast<int>(newDenominator));
     }
 
+    Fraction operator+() const
+    {
+        return *this;
+    }
+
+    Fraction operator-() const
+    {
+        return Fraction(-m_numerator, m_denominator);
+    }
+
+    Fraction& operator+=(const Fraction other)
+    {
+        *this = *this + other;
+
+        return *this;
+    }
+
+    Fraction& operator-=(const Fraction other)
+    {
+        *this = *this - other;
+
+        return *this;
+    }
+
+    Fraction& operator*=(const Fraction other)
+    {
+        *this = *this * other;
+
+        return *this;
+    }
+
+    Fraction& operator/=(const Fraction other)
+    {
+        *this = *this / other;
+
+        return *this;
+    }
+
 private:
     int m_numerator;
     int m_denominator;

@@ -153,3 +153,51 @@ TEST(FractionTests, DivisionOperatorWorks)
 
     EXPECT_EQ(result, Fraction(8, 9)); // (2/3) / (3/4) = (2/3)*(4/3) = 8/9
 }
+
+TEST(FractionTests, UnaryPlusOperatorWorks)
+{
+    Fraction a(3, 4);
+    Fraction result = +a;
+
+    EXPECT_EQ(result, a);
+}
+
+TEST(FractionTests, UnaryMinusOperatorWorks)
+{
+    Fraction a(3, 4);
+    Fraction result = -a;
+
+    EXPECT_EQ(result, Fraction(-3, 4));
+}
+
+TEST(FractionTests, PlusEqualsOperatorWorks)
+{
+    Fraction a(1, 2);
+    a += Fraction(1, 3);
+
+    EXPECT_EQ(a, Fraction(5, 6));
+}
+
+TEST(FractionTests, MinusEqualsOperatorWorks)
+{
+    Fraction a(1, 2);
+    a -= Fraction(1, 3);
+
+    EXPECT_EQ(a, Fraction(1, 6));
+}
+
+TEST(FractionTests, MultiplyEqualsOperatorWorks)
+{
+    Fraction a(2, 3);
+    a *= Fraction(3, 4);
+
+    EXPECT_EQ(a, Fraction(1, 2));
+}
+
+TEST(FractionTests, DivideEqualsOperatorWorks)
+{
+    Fraction a(2, 3);
+    a /= Fraction(3, 4);
+
+    EXPECT_EQ(a, Fraction(8, 9));
+}
