@@ -139,6 +139,8 @@ public:
         return *this;
     }
 
+    friend std::ostream& operator<<(std::ostream& os, const Fraction& f);
+
 private:
     int m_numerator;
     int m_denominator;

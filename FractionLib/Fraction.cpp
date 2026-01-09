@@ -4,6 +4,7 @@
 #include "framework.h"
 #include "Fraction.h"
 #include <numeric>
+#include <iostream>
 
 static int gcd(int a, int b)
 {
@@ -18,6 +19,13 @@ static int gcd(int a, int b)
     }
 
     return a;
+}
+
+std::ostream& operator<<(std::ostream& os, const Fraction& f)
+{
+    os << f.m_numerator << '/' << f.m_denominator;
+
+    return os;
 }
 
 Fraction::Fraction(int numerator, int denominator)

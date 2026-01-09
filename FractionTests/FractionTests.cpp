@@ -201,3 +201,12 @@ TEST(FractionTests, DivideEqualsOperatorWorks)
 
     EXPECT_EQ(a, Fraction(8, 9));
 }
+
+TEST(FractionTests, StreamOutputOperatorWorks)
+{
+    Fraction a(3, 4);
+    std::ostringstream oss;
+    oss << a;
+
+    EXPECT_EQ(oss.str(), "3/4");
+}
