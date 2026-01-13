@@ -141,6 +141,13 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, const Fraction& f);
 
+    friend std::istream& operator>>(std::istream& is, Fraction& f);
+
+    explicit operator double() const
+    {
+        return static_cast<double>(m_numerator) / m_denominator;
+    }
+
 private:
     int m_numerator;
     int m_denominator;

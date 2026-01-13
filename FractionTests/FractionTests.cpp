@@ -210,3 +210,94 @@ TEST(FractionTests, StreamOutputOperatorWorks)
 
     EXPECT_EQ(oss.str(), "3/4");
 }
+
+TEST(FractionTests, ConvertToDoubleWorks)
+{
+    Fraction f(1, 2);
+    double d = static_cast<double>(f);
+
+    EXPECT_DOUBLE_EQ(d, 0.5);
+}
+
+TEST(FractionTests, ConvertToDoubleAndStreamOutWorks)
+{
+    Fraction f(3, 4); 
+
+    // Conversion
+    double d = static_cast<double>(f);
+    EXPECT_DOUBLE_EQ(d, 0.75);
+
+    // Streaming
+    std::ostringstream oss;
+    oss << d;
+
+    EXPECT_EQ(oss.str(), "0.75");
+}
+
+TEST(FractionTests, StreamInputParsesCorrectly)
+{
+    std::istringstream iss("3/4");
+    Fraction f; 
+    iss >> f;
+
+    EXPECT_EQ(f.numerator(), 3);
+    EXPECT_EQ(f.denominator(), 4);
+}
+
+TEST(FractionTests, StreamInputFailsOnInvalidFormat)
+{
+    std::istringstream iss("3-x");
+    Fraction f;
+    iss >> f;
+
+    EXPECT_TRUE(iss.fail());
+}
+
+TEST(FractionTests, StreamInputFailsOnMissingSlash)
+{
+    std::istringstream iss("34"); // no slash
+    Fraction f;
+    iss >> f;
+
+    EXPECT_TRUE(iss.fail());
+}
+
+TEST(FractionTests, StreamInputFailsOnWrongSeparator)
+{
+    std::istringstream iss("3-4"); // wrong separator
+    Fraction f;
+    iss >> f;
+
+    EXPECT_TRUE(iss.fail());
+}
+
+TEST(FractionTests, StreamInputFailsOnZeroDenominator)
+{
+    std::istringstream iss("3/0"); 
+    Fraction f;
+    iss >> f;
+
+    EXPECT_TRUE(iss.fail());
+}
+
+TEST(FractionTests, StreamInputDoesNotModifyOnFailure)
+{
+    Fraction f(1, 2);               // known good value
+    std::istringstream iss("bad");  // invalid input
+    iss >> f;
+
+    EXPECT_TRUE(iss.fail());
+    EXPECT_EQ(f.numerator(), 1);
+    EXPECT_EQ(f.denominator(), 2);
+}
+
+TEST(FractionTests, StreamInputHandlesWhitespaces)
+{
+    std::istringstream iss("    7  /  8    ");
+    Fraction f;
+    iss >> f;
+
+    EXPECT_FALSE(iss.fail());
+    EXPECT_EQ(f.numerator(), 7);
+    EXPECT_EQ(f.denominator(), 8);
+}
