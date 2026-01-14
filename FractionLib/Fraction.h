@@ -1,11 +1,17 @@
 #pragma once
 #include <stdexcept>
 #include <string>
+#include <ostream>
+#include <istream>
+#include <cstdlib>
 
 class Fraction
 {
 public:
-    Fraction(int numerator = 0, int denominator = 1)
+    
+    // Constructors
+    
+    constexpr Fraction(int numerator = 0, int denominator = 1)
         : m_numerator(numerator), m_denominator(denominator)
     {
         if (denominator == 0)
@@ -16,49 +22,55 @@ public:
         reduce();
     }
 
-    int numerator() const { return m_numerator; }
-    int denominator() const { return m_denominator; }
+    // Accessors 
 
-    std::string toString() const;
-    
+    constexpr int numerator() const { return m_numerator; }
+    constexpr int denominator() const { return m_denominator; }
+
     double toDouble() const
     {
         return static_cast<double>(m_numerator) / m_denominator;
     }
 
-    bool operator==(const Fraction& other) const
+    std::string toString() const;
+    
+    // Comparison operators 
+
+    constexpr bool operator==(const Fraction& other) const
     {
         return m_numerator == other.m_numerator &&
             m_denominator == other.m_denominator;
     }
 
-    bool operator!=(const Fraction& other) const
+    constexpr bool operator!=(const Fraction& other) const
     {
         return !(*this == other);
     }
 
-    bool operator<(const Fraction& other) const
+    constexpr bool operator<(const Fraction& other) const
     {
         return static_cast<long long>(m_numerator) * other.m_denominator <
             static_cast<long long>(other.m_numerator) * m_denominator;
     }
     
-    bool operator<=(const Fraction& other) const
+    constexpr bool operator<=(const Fraction& other) const
     {
         return *this < other || *this == other;
     }
 
-    bool operator>(const Fraction& other) const
+    constexpr bool operator>(const Fraction& other) const
     {
         return other < *this;
     }
 
-    bool operator>=(const Fraction& other) const
+    constexpr bool operator>=(const Fraction& other) const
     {
         return other <= *this;
     }
 
-    Fraction operator+(const Fraction& other) const
+    // Arithmetic operators 
+
+    constexpr Fraction operator+(const Fraction& other) const
     {
         long long newNumerator =
             static_cast<long long>(m_numerator) * other.m_denominator +
@@ -71,7 +83,7 @@ public:
                         static_cast<int>(newDenominator));
     }
 
-    Fraction operator-(const Fraction& other) const
+    constexpr Fraction operator-(const Fraction& other) const
     {
         long long newNumerator =
             static_cast<long long>(m_numerator) * other.m_denominator -
@@ -84,7 +96,7 @@ public:
                         static_cast<int>(newDenominator));
     }
 
-    Fraction operator*(const Fraction& other) const
+    constexpr Fraction operator*(const Fraction& other) const
     {
         long long newNumerator =
             static_cast<long long>(m_numerator) * other.m_numerator;
@@ -96,7 +108,7 @@ public:
                         static_cast<int>(newDenominator));
     }
 
-    Fraction operator/(const Fraction& other) const
+    constexpr Fraction operator/(const Fraction& other) const
     {
         // Divisiton by zero check
         if (other.m_numerator == 0)
@@ -114,15 +126,19 @@ public:
                         static_cast<int>(newDenominator));
     }
 
-    Fraction operator+() const
+    // Unary operators 
+
+    constexpr Fraction operator+() const
     {
         return *this;
     }
 
-    Fraction operator-() const
+    constexpr Fraction operator-() const
     {
         return Fraction(-m_numerator, m_denominator);
     }
+
+    // Compound assignment 
 
     Fraction& operator+=(const Fraction& other)
     {
@@ -152,9 +168,13 @@ public:
         return *this;
     }
 
+    // Stream operators 
+
     friend std::ostream& operator<<(std::ostream& os, const Fraction& f);
 
     friend std::istream& operator>>(std::istream& is, Fraction& f);
+
+    // Conversion 
 
     explicit operator double() const
     {
@@ -165,22 +185,17 @@ private:
     int m_numerator;
     int m_denominator;
 
-    static int gcd(int a, int b)
+    // Helpers 
+
+    static constexpr int gcd(int a, int b)
     {
-        a = std::abs(a);
-        b = std::abs(b);
+        a = a < 0 ? -a : a;
+        b = b < 0 ? -b : b;
 
-        while (b != 0)
-        {
-            int temp = b;
-            b = a % b;
-            a = temp;
-        }
-
-        return a;
+        return (b == 0) ? a : gcd(b, a % b);
     }
 
-    void reduce()
+    constexpr void reduce()
     {
         // Normalize sign: denominator should always be positive 
         if (m_denominator < 0)
