@@ -20,7 +20,11 @@ public:
     int denominator() const { return m_denominator; }
 
     std::string toString() const;
-    double toDouble() const;
+    
+    double toDouble() const
+    {
+        return static_cast<double>(m_numerator) / m_denominator;
+    }
 
     bool operator==(const Fraction& other) const
     {
@@ -120,28 +124,28 @@ public:
         return Fraction(-m_numerator, m_denominator);
     }
 
-    Fraction& operator+=(const Fraction other)
+    Fraction& operator+=(const Fraction& other)
     {
         *this = *this + other;
 
         return *this;
     }
 
-    Fraction& operator-=(const Fraction other)
+    Fraction& operator-=(const Fraction& other)
     {
         *this = *this - other;
 
         return *this;
     }
 
-    Fraction& operator*=(const Fraction other)
+    Fraction& operator*=(const Fraction& other)
     {
         *this = *this * other;
 
         return *this;
     }
 
-    Fraction& operator/=(const Fraction other)
+    Fraction& operator/=(const Fraction& other)
     {
         *this = *this / other;
 
