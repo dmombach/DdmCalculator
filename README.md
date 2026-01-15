@@ -100,6 +100,53 @@ It’s a living project that evolves as I grow.
 
 ---
 
+## 🧭 Before / After: Evolution of the Fraction Class
+
+This project intentionally reflects how my C++ skills have grown over time.  
+The `Fraction` type is a good example of that progression.
+
+### **Before (early version)**  
+A simple, functional structure with minimal encapsulation and no compile‑time capabilities:
+
+```cpp
+class Fraction {
+public:
+    Fraction(int n, int d) : num(n), den(d) {}
+    int num;
+    int den;
+};
+```
+
+### **After (current version)**  
+A clean, modern, constexpr‑capable value type with full arithmetic, comparisons, reduction, and compile‑time validation:
+
+```cpp
+class Fraction {
+public:
+    constexpr Fraction(int numerator = 0, int denominator = 1);
+    constexpr int numerator() const;
+    constexpr int denominator() const;
+    // full constexpr arithmetic, comparisons, reduction, etc.
+private:
+    int m_numerator;
+    int m_denominator;
+    static constexpr int gcd(int a, int b);
+    constexpr void reduce();
+};
+```
+
+### **What this evolution represents**  
+- Moving from basic class syntax to **professional value‑type design**  
+- Adding **constexpr** support for compile‑time evaluation  
+- Introducing **operator overloading** for natural arithmetic  
+- Implementing **sign normalization** and **fraction reduction**  
+- Building a **compile‑time test suite** using `static_assert`  
+- Developing a deeper understanding of **clean architecture** and **modern C++ idioms**
+
+This section highlights not just the code, but the learning journey behind it — a core purpose of this repository.
+
+---
+
 ## 🗺️ **Roadmap**
 
 - Add more financial models (e.g., multi‑stage DDM)  
