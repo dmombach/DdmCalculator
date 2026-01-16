@@ -155,6 +155,7 @@
   <ItemGroup>
     <ClCompile Include="FractionTests.cpp" />
     <ClCompile Include="FractionTests_constexpr.cpp" />
+    <ClCompile Include="GordonGrowthTests_constexpr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FractionLib\FractionLib.vcxproj">

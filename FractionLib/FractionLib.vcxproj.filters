@@ -21,6 +21,9 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GordonGrowth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Fraction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
