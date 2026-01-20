@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="include\Calculator.h" />
+    <ClInclude Include="include\DdmCalculator.h" />
     <ClInclude Include="include\StringUtil.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
@@ -164,6 +165,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Calculator.cpp" />
+    <ClCompile Include="src\DdmCalculator.cpp" />
     <ClCompile Include="src\StringUtil.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -42,7 +42,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>$(SolutionDir)DdmCalculatorLib\include;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)DdmCalculatorLib\include;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ShowIncludes>true</ShowIncludes>
     </ClCompile>
     <Link>
@@ -61,7 +61,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>$(SolutionDir)DdmCalculatorLib\include;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)DdmCalculatorLib\include;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ShowIncludes>true</ShowIncludes>
     </ClCompile>
     <Link>
@@ -79,7 +79,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(SolutionDir)DdmCalculatorLib\include;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)DdmCalculatorLib\include;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ShowIncludes>true</ShowIncludes>
     </ClCompile>
     <Link>
@@ -99,7 +99,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(SolutionDir)DdmCalculatorLib\include;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)FractionLib;$(SolutionDir)DdmCalculatorLib\include;$(SolutionDir)externals\googletest\googletest\include;$(SolutionDir)externals\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ShowIncludes>true</ShowIncludes>
     </ClCompile>
     <Link>
@@ -115,6 +115,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DdmCalculatorGordonGrowthTests.cpp" />
     <ClCompile Include="DdmCalculatorParamTests.cpp" />
     <ClCompile Include="DdmCalculatorTests.cpp" />
     <ClCompile Include="pch.cpp">
@@ -129,6 +130,9 @@
   <ItemGroup>
     <ProjectReference Include="..\DdmCalculatorLib\DdmCalculatorLib.vcxproj">
       <Project>{e888d2a8-a38a-438c-a609-cc464e711f0d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\FractionLib\FractionLib.vcxproj">
+      <Project>{3627aaf1-a6e0-4e14-89a0-f709cef93b8f}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
