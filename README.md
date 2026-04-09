@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="DdmCalculator.png" width="480" alt="DdmCalculator Logo" />
+  <img src="DdmCalculator.png" width="180" alt="DdmCalculator Logo" />
 </p>
 
 <p align="center">
