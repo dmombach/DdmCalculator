@@ -1,5 +1,15 @@
+<p align="center">
+  <img src="DdmCalculator.png" width="480" alt="DdmCalculator Logo" />
+</p>
 
----
+<p align="center">
+  <img src="https://img.shields.io/badge/C++-17/20/23-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
+  <img src="https://img.shields.io/badge/CMake-3.20+-064F8C?style=for-the-badge&logo=cmake&logoColor=white" />
+  <img src="https://img.shields.io/badge/GCC/Clang-11+-262D3A?style=for-the-badge&logo=llvm&logoColor=white" />
+  <img src="https://img.shields.io/badge/Math-Financial%20Modeling-2E8B57?style=for-the-badge&logo=calculator&logoColor=white" />
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
+</p>
 
 # 📘 **DdmCalculator**
 
